@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Spinner } from 'components'
 import { Layout } from 'components/fighters'
 import { fighterService } from 'services'
+import Image from 'next/image'
 
 export default Index
 
@@ -58,7 +59,7 @@ function Index() {
                         fighters.map((fighter) => (
                             <tr key={fighter.id}>
                                 <td>
-                                    <img
+                                    <Image
 
                                     src={fighter?.photo} alt="fighter photo" />
                                     

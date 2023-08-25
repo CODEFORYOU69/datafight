@@ -11,6 +11,7 @@ import {
     roundService,
     fighterService,
 } from 'services'
+import Image from 'next/image'
 
 Modal.setAppElement('#__next')
 
@@ -419,7 +420,8 @@ function AddRound() {
             >
                 <h4 className="card-header">Add Fight</h4>
                 <div className="flex flex-col pt-12 form-group">
-                <img src="/uploads/df.png" alt="round" className='left-4 w-20 h-20'/>
+                <Image src="/uploads/df.png" height={144} // Desired size with correct aspect ratio
+    width={144} alt="round" className='left-4 w-20 h-20'/>
                     <label>Fighter Blue</label>
                     <p>
                         {fighter1.firstName} {fighter1.lastName}
