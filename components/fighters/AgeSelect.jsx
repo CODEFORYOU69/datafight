@@ -3,8 +3,6 @@ import { ageCategories } from './data'
 export const AgeSelect = ({
     value,
     onChange,
-    selectedAge,
-    handleAgeChange,
 }) => {
     return (
         <select name="age" value={value} onChange={onChange}>

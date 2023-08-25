@@ -25,7 +25,7 @@ function Login() {
 
     function onSubmit({ email, password }) {
         alertService.clear();
-        return userService.Login(email, password)
+        return userService.login(email, password)
             .then(() => {
                 // get return url from query parameters or default to '/'
                 const returnUrl = router.query.returnUrl || '/';
@@ -57,7 +57,7 @@ function Login() {
                             {formState.isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
                             Login
                         </button>
-                        <Link href="/account/register" className="btn btn-link">Register</Link>
+                        <Link href="/account/Register" className="btn btn-link">Register</Link>
                         <Link href="/account/forgot-password" className="btn btn-link">Forgot Password ?</Link>
                     </form>
                 </div>

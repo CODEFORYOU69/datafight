@@ -9,7 +9,7 @@ export const WeightSelect = ({
         if (selectedWeight) {
             onChange(selectedWeight)
         }
-    }, [selectedWeight])
+    }, [selectedWeight, onChange])
     return (
         <select name="weightcategory" value={value} onChange={onChange}>
             <option value="">Select a weight category</option>
