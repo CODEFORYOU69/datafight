@@ -1,6 +1,7 @@
 import { BehaviorSubject } from 'rxjs';
 import getConfig from 'next/config';
 import Router from 'next/router';
+import connectDb from '@/helpers/api/database';
 
 import { fetchWrapper } from 'helpers';
 import { alertService } from './alert.service';
@@ -10,9 +11,10 @@ const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
 const userSubject = new BehaviorSubject(typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user')));
 
 export const userService = {
+
     user: userSubject.asObservable(),
     get userValue() { return userSubject.value },
-    Login,
+    login,
     logout,
     register,
     isAdmin,
@@ -24,7 +26,7 @@ export const userService = {
     delete: _delete
 };
 
-async function Login(email, password) {
+async function login(email, password) {
     const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { email, password });
 
     // publish user to subscribers and store in local storage to stay logged in between page refreshes
