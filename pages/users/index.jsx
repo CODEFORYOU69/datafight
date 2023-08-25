@@ -55,7 +55,7 @@ function Index() {
             .catch(error => {
                 console.error("Error checking admin status:", error);
             });
-    }, []);
+    }, [Id]);
 
     function deleteUser(id) {
         setUsers(users && users.map(x => {

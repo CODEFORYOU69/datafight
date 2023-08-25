@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { fighterService } from 'services'
 
@@ -79,7 +80,7 @@ function FightersList() {
                                         </div>
                                     </div>
                                     <div className="flex flex-col sm:flex-row flex-wrap items-center gap-8">
-                                        <img
+                                        <Image
                                             alt="fighter"
                                             src={
                                                 fighter.photo ||

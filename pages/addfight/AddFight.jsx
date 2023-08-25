@@ -68,7 +68,7 @@ function AddFight() {
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="flex flex-col form-group">
                                     <label htmlFor="eventYear">
-                                        Année de l'événement :
+                                        Année de l événement :
                                     </label>
                                     <input
                                         type="number"
@@ -77,7 +77,7 @@ function AddFight() {
                                     />
 
                                     <label htmlFor="eventType">
-                                        Type d'événement :
+                                        Type d événement :
                                     </label>
 
                                     <input
@@ -87,7 +87,7 @@ function AddFight() {
                                     />
 
                                     <label htmlFor="eventName">
-                                        Nom de l'événement :
+                                        Nom de l événement :
                                     </label>
 
                                     <input

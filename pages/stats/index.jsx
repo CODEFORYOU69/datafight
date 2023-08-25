@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { fightService, fighterService } from 'services'
 import ChartsDash from 'components/charts/ChartsDash'
+import Image from 'next/image'
 
 
 const StatsPage = () => {
@@ -102,6 +103,7 @@ const StatsPage = () => {
         if (JSON.stringify(newPhotoData) !== JSON.stringify(photoData)) {
             setPhotoData(newPhotoData);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, filters]);
 
 
@@ -115,12 +117,12 @@ const StatsPage = () => {
                 >
                     {isFilterPanelOpen ?
                         <label>
-                            <img src="/uploads/yeux-fermes.jpg" alt="Fermer les filtres" />
+                            <Image src="/uploads/yeux-fermes.jpg" alt="Fermer les filtres" />
                             Hide filters
                         </label>
                         :
                         <label>
-                            <img src="/uploads/oeil.jpg" alt="Ouvrir les filtres" />
+                            <Image src="/uploads/oeil.jpg" alt="Ouvrir les filtres" />
                             Show filters
                         </label>
                     }
@@ -386,7 +388,7 @@ const StatsPage = () => {
                                 <p className="text-xl font-bold">
                                     {photoData[1]} {photoData[2]}
                                 </p>
-                                <img
+                                <Image
                                     className="w-40 h-40 rounded"
                                     src={photoData[0]}
                                     alt=""

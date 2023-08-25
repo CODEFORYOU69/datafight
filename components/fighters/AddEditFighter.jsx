@@ -12,6 +12,7 @@ import { SexSelect } from './SexSelect'
 import { WeightSelect } from './WeightSelect'
 import { getWeightCategories } from './utilities'
 import { set } from 'mongoose'
+import Image from 'next/image'
 
 export { AddEditFighter }
 
@@ -114,12 +115,14 @@ function AddEditFighter(props) {
     return (
         <div className="flex flex-col md:flex-row justify-around ">
             <div className="flex flex-col sm:flex-row flex-wrap items-center gap-8">
-                <img
+                <Image
                     alt="fighter"
                     src={
                         fighters?.photo ||
                         '/uploads/defaultPhoto.jpg'
                     }
+                    height={144} // Desired size with correct aspect ratio
+    width={144}
                     className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 object-cover rounded border-2 border-gray-300"
                 />
 
