@@ -1,3 +1,3 @@
 export * from './AddEditFight';
 export * from './Layout';
-export * from './validationRoundSchema';
+export * from './ValidationRoundSchema';

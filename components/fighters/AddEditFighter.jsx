@@ -10,7 +10,7 @@ import { fighterService, alertService } from 'services'
 import { AgeSelect } from './AgeSelect'
 import { SexSelect } from './SexSelect'
 import { WeightSelect } from './WeightSelect'
-import { getWeightCategories } from './utilities'
+import { getWeightCategories } from './Utilities'
 import { set } from 'mongoose'
 import Image from 'next/image'
 
@@ -121,8 +121,8 @@ function AddEditFighter(props) {
                         fighters?.photo ||
                         '/uploads/defaultPhoto.jpg'
                     }
-                    height={144} // Desired size with correct aspect ratio
-    width={144}
+                    height={30} // Desired size with correct aspect ratio
+                    width={30}
                     className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 object-cover rounded border-2 border-gray-300"
                 />
 

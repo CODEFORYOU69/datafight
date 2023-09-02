@@ -50,6 +50,7 @@ async function authenticate({ email, password }) {
 
 async function forgotPassword({ email }) {
     const user = await User.findOne({ email })
+    console.log("user",user)
 
     if (!user) { throw 'if this email is registered you will receive an email' }
         // create a jwt token that is valid for 1 hour store it in the db and send an email with link for reset password
@@ -68,13 +69,13 @@ async function forgotPassword({ email }) {
         process.env.MAILJET_API_KEY,
         process.env.MAILJET_API_SECRET
     );
-    
+    console.log(mailjetConnection)
 
     const request = mailjetConnection.post('send', { version: 'v3.1' }).request({
         Messages: [
             {
                 From: {
-                    Email: 'younes-ouasmi_student2022@wilder.school',
+                    Email: 'y.ouasmi@gmail.com',
 
             
                 },
@@ -84,7 +85,7 @@ async function forgotPassword({ email }) {
                     }
                 ],
                 Subject: 'Reset your password',
-                TextPart: `Hello ${user.firstName} ${user.lastName},\n\nYou are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\n${serverRuntimeConfig.clientUrl}/reset-password?token=${token}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`
+                TextPart: `Hello ${user.firstName} ${user.lastName},\n\nYou are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\n${serverRuntimeConfig.clientUrl}/ResetPassword?token=${token}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`
             }
         ]
     })

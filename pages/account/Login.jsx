@@ -58,7 +58,7 @@ function Login() {
                             Login
                         </button>
                         <Link href="/account/Register" className="btn btn-link">Register</Link>
-                        <Link href="/account/forgot-password" className="btn btn-link">Forgot Password ?</Link>
+                        <Link href="/account/forgotpassword" className="btn btn-link">Forgot Password ?</Link>
                     </form>
                 </div>
             </div>

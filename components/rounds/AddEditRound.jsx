@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import { useRouter } from 'next/router'
-import Scoreboard from './ScoreBoard'
+import Scoreboard from '@/pages/addround/Scoreboard'
 import IncrementDecrementField from 'components/fights/IncrementDecrementField'
 
 import { Layout } from 'components/fights'
@@ -12,13 +11,14 @@ import {
     roundService,
     fighterService,
 } from 'services'
+import Image from 'next/image'
 
 Modal.setAppElement('#__next')
 
-export default AddRound
+export default AddEditRound
 
 
-function AddRound() {
+function AddEditRound() {
     const router = useRouter()
     const [att_og_1_by_fighter1, setAtt_og_1_by_fighter1] = useState(0)
     const [att_og_2_by_fighter1, setAtt_og_2_by_fighter1] = useState(0)
@@ -395,7 +395,7 @@ function AddRound() {
             round_winner_id: round_winner_id,
         }
         return roundService
-            .createRound(round)
+            .update(round)
             .then(() => {
                 alertService.success('Round added successfully', true)
                 router.push('/fights')
@@ -420,7 +420,7 @@ function AddRound() {
             >
                 <h4 className="card-header">Add Round</h4>
                 <div className="flex flex-col pt-12 form-group">
-                <Image src="/uploads/df.png" height={30} 
+                <Image src="/uploads/df.png" height={30} // Desired size with correct aspect ratio
                     width={30} alt="round" className='left-4 w-20 h-20'/>
                     <label>Fighter Blue</label>
                     <p>
@@ -436,35 +436,33 @@ function AddRound() {
                 </div>
                 
                 <form onSubmit={onSubmit}>
-                    <div className="grid border-2 p-2 grid-cols-9 grid-rows-11 gap-4 border-1 text-center  border-red-600">
-                        
-                        <div className="text-center border-2  border-black">
+                    <div className="grid pt-32 grid-cols-9 grid-rows-11 gap-4 border-1 text-center border-double border-red-600">
+                        <div className="text-center  border-red-600">
                             Round:{roundCount + 1}
                         </div>
-                        <div className="col-span-8 text-center border-2 border-black">ATTAQUE</div>
-                        <div className="row-start-2 border-2 border-black">GARDE</div>
-                        <div className="col-span-2 row-start-2 border-2 border-black">
+                        <div className="col-span-8 text-center">ATTAQUE</div>
+                        <div className="row-start-2">GARDE</div>
+                        <div className="col-span-2 row-start-2">
                             OUVERTE DROITE
                         </div>
-                        <div className="border-simple col-span-2 col-start-4 row-start-2 border-2 border-black">
+                        <div className="border-simple col-span-2 col-start-4 row-start-2">
                             FERMEE DROITE
                         </div>
-                        <div className="col-span-2 col-start-6 row-start-2 border-2 border-black">
+                        <div className="col-span-2 col-start-6 row-start-2">
                             OUVERTE GAUCHE
                         </div>
-                        <div className="col-span-2 col-start-8 row-start-2 border-2 border-black">
+                        <div className="col-span-2 col-start-8 row-start-2">
                             FERMEE GAUCHE
                         </div>
-                        <div className="row-start-3 border-2 border-black">FIGHTER</div>
-                        <div className="row-start-3 border-2 border-blue-800 ">BLUE</div>
-                        <div className="row-start-3 border-2 border-red-600">RED</div>
-                        <div className="row-start-3 border-2 border-blue-800">BLUE</div>
-                        <div className="row-start-3 border-2 border-red-600">RED</div>
-                        <div className="row-start-3 border-2 border-blue-800">BLUE</div>
-                        <div className="row-start-3 border-2 border-red-600">RED</div>
-                        <div className="row-start-3 border-2 border-blue-800">BLUE</div>
-                        <div className="row-start-3 border-2 border-red-600">RED</div>
-                        
+                        <div className="row-start-3">FIGHTER</div>
+                        <div className="row-start-3">BLUE</div>
+                        <div className="row-start-3">RED</div>
+                        <div className="row-start-3">BLUE</div>
+                        <div className="row-start-3">RED</div>
+                        <div className="row-start-3">BLUE</div>
+                        <div className="row-start-3">RED</div>
+                        <div className="row-start-3">BLUE</div>
+                        <div className="row-start-3">RED</div>
                         <div>
                             <IncrementDecrementField
                                 value={att_fg_1_by_fighter1}
@@ -586,7 +584,7 @@ function AddRound() {
                                 }}
                             />
                         </div>
-                        <div className="row-start-5 border-black">2 POINTS</div>
+                        <div className="row-start-5">2 POINTS</div>
                         <div className="row-start-5">
                             {' '}
                             <IncrementDecrementField

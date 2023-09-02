@@ -117,12 +117,16 @@ const StatsPage = () => {
                 >
                     {isFilterPanelOpen ?
                         <label>
-                            <Image src="/uploads/yeux-fermes.jpg" alt="Fermer les filtres" />
+                            <Image src="/uploads/yeux-fermes.jpg" alt="Fermer les filtres"
+                            width={24}
+                            height={24} />
                             Hide filters
                         </label>
                         :
                         <label>
-                            <Image src="/uploads/oeil.jpg" alt="Ouvrir les filtres" />
+                            <Image src="/uploads/oeil.jpg" alt="Ouvrir les filtres"
+                            width={24}
+                            height={24} />
                             Show filters
                         </label>
                     }
@@ -391,6 +395,8 @@ const StatsPage = () => {
                                 <Image
                                     className="w-40 h-40 rounded"
                                     src={photoData[0]}
+                                    width={24}
+                                    height={24}
                                     alt=""
                                 />
                             </div>

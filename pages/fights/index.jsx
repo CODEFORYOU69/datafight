@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
+
 import { Spinner } from 'components'
 import { Layout } from 'components/fighters'
 import { fightService } from 'services'

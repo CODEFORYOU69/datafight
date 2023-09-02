@@ -18,7 +18,7 @@ export const roundRepo = {
 
 // get all fights and populate fighter1 and fighter2
 async function getAll() {
-    return await Round.find().populate('fight').populate('createdBy')
+    return await Round.find().poulate('fighter').populate('fight').populate('createdBy')
 }
 
 async function getById(id) {

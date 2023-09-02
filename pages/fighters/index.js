@@ -61,7 +61,13 @@ function Index() {
                                 <td>
                                     <Image
 
-                                    src={fighter?.photo} alt="fighter photo" />
+                                    src={fighter?.photo} 
+                                    width={30}
+                                    height={30}
+                                    
+                                    alt="fighter photo" />
+
+                                    
                                     
                                     </td>
                                 <td>{fighter.firstName}</td>

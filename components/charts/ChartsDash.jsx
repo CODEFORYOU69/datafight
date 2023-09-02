@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NumberFightBarChart from './Bar'
 import RadarChart from './Radar1'
-import assignRoundData from './dataFilters'
+import assignRoundData from './DataFilters'
 
 import AttOgFightersBarChart from './FightersBarChart'
 

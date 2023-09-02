@@ -28,6 +28,11 @@
                 headers,
                 body
             };
+            console.log("requestOptions", requestOptions)
+            console.log("url", url)
+            console.log("body", body)
+            console.log("headers", headers)
+            console.log("method", method)
 
             const response = await fetch(url, requestOptions);
             return handleResponse(response);
@@ -39,8 +44,8 @@
 
     function authHeader(url) {
         // return auth header with jwt if user is logged in and request is to the api url
-
-        if (url.includes('resetpassword') || url.includes('forgotPassword')) {
+console.log("urluuu", url)
+        if (url.includes('http://localhost:3000/api/users/forgotpassword') || url.includes('forgotPassword')) {
             return {
                 'Content-Type': 'application/json',
                 
@@ -58,6 +63,7 @@
 
 
     async function handleResponse(response) {
+        console.log("response", response)
 
 
         const isJson = response.headers

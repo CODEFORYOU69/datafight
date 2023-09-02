@@ -86,6 +86,8 @@ function FightersList() {
                                                 fighter.photo ||
                                                 '/uploads/defaultPhoto.jpg'
                                             }
+                                            width={24}
+                                            height={24}
                                             className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 object-cover rounded border-2 border-gray-300"
                                         />
 
